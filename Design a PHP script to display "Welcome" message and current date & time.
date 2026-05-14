@@ -1,0 +1,10 @@
+<?php
+date_default_timezone_set("Asia/Kolkata");
+echo "<h2 style='color:blue;'>Welcome to PHP</h2>";
+echo "<p style='color:red;'>Date: " . date("d-m-Y") . "</p>";
+echo "<p style='color:green;'>Time: " . date("h:i:s A") . "</p>";
+?>
+<?php
+// Displaying the current date and time in a different format   
+echo "<p style='color:purple;'>Current Date and Time: " . date("l, F j, Y, g:i A") . "</p>";
+?>
