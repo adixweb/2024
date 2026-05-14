@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Registration Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* Font */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animated Background */
+.custom-bg{
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #6dd5ed, #2193b0);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Header */
+.custom-header{
+    background: linear-gradient(135deg,#00416a,#1cb5e0);
+    color:white;
+    font-weight:bold;
+    letter-spacing:1px;
+    border-radius:15px 15px 0 0;
+}
+
+/* Glass Card */
+.card{
+    border-radius:15px;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.9);
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* Inputs */
+.form-control, .form-select, textarea{
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.form-control:focus, .form-select:focus, textarea:focus{
+    border-color:#1cb5e0;
+    box-shadow:0 0 10px rgba(28,181,224,0.5);
+}
+
+/* Button */
+.btn-register{
+    background: linear-gradient(135deg,#1cb5e0,#000046);
+    color:white;
+    border:none;
+    font-weight:bold;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+.btn-register:hover{
+    transform: scale(1.05);
+    box-shadow:0 0 15px rgba(28,181,224,0.7);
+}
+
+/* CAPTCHA */
+#captchaText{
+    letter-spacing:3px;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body class="custom-bg">
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-5">
+
+      <div class="card">
+
+        <div class="card-header custom-header text-center">
+         <h4>Bank of Baramati</h4>
+        </div>
+
+        <div class="card-body">
+
+          <div id="message"></div>
+
+          <!-- REGISTER FORM -->
+          <form id="registerForm">
+
+            <h5 class="text-center mb-3">Register</h5>
+
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Gender</label>
+              <select class="form-select" id="gender">
+                <option selected disabled>Choose Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="dob">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Address</label>
+              <textarea class="form-control" id="address"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Aadhar Number</label>
+              <input type="text" class="form-control" id="aadhar">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">PAN Number</label>
+              <input type="text" class="form-control" id="pan">
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Account Number</label>
+                <input type="text" class="form-control" id="accountNumber">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Account ID</label>
+                <input type="text" class="form-control" id="accountID">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">IFSC Code</label>
+              <input type="text" class="form-control" id="ifsc">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword">
+            </div>
+
+            <!-- CAPTCHA -->
+            <div class="mb-3">
+              <label class="form-label">CAPTCHA</label>
+              <div class="d-flex align-items-center">
+                <span id="captchaText" class="fw-bold bg-dark text-white px-3 py-2 rounded me-2"></span>
+                <button type="button" class="btn btn-sm btn-secondary" onclick="generateCaptcha()">Refresh</button>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <input type="text" class="form-control" id="captchaInput" placeholder="Enter CAPTCHA">
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-register">Register</button>
+            </div>
+
+            <div class="text-center mt-3">
+              Already have an account? <a href="#" onclick="showLogin()">Login</a>
+            </div>
+
+          </form>
+
+          <!-- LOGIN FORM -->
+          <form id="loginForm" style="display:none;">
+
+            <h5 class="text-center mb-3">Login</h5>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword">
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-register">Login</button>
+            </div>
+
+            <div class="text-center mt-3">
+              New user? <a href="#" onclick="showRegister()">Register</a>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+let captchaValue = "";
+
+function generateCaptcha() {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    captchaValue = "";
+    for (let i = 0; i < 6; i++) {
+        captchaValue += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById("captchaText").innerText = captchaValue;
+}
+
+window.onload = generateCaptcha;
+
+// SWITCH FORMS
+function showLogin(){
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("message").innerHTML = "";
+}
+
+function showRegister(){
+    document.getElementById("registerForm").style.display = "block";
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("message").innerHTML = "";
+}
+
+// REGISTER VALIDATION
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let fullName = document.getElementById("fullName").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let captchaInput = document.getElementById("captchaInput").value.trim();
+    let messageDiv = document.getElementById("message");
+
+    if(fullName === "" || email === "" || password === "" || confirmPassword === "" || captchaInput === "") {
+        messageDiv.innerHTML = '<div class="alert alert-danger">All fields are required!</div>';
+        return;
+    }
+
+    if(password.length < 6) {
+        messageDiv.innerHTML = '<div class="alert alert-warning">Password must be at least 6 characters.</div>';
+        return;
+    }
+
+    if(password !== confirmPassword) {
+        messageDiv.innerHTML = '<div class="alert alert-danger">Passwords do not match!</div>';
+        return;
+    }
+
+    if(captchaInput !== captchaValue) {
+        messageDiv.innerHTML = '<div class="alert alert-danger">Invalid CAPTCHA!</div>';
+        generateCaptcha();
+        return;
+    }
+
+    messageDiv.innerHTML = '<div class="alert alert-success">Registration Successful!</div>';
+});
+
+// LOGIN VALIDATION
+document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let email = document.getElementById("loginEmail").value.trim();
+    let password = document.getElementById("loginPassword").value;
+    let messageDiv = document.getElementById("message");
+
+    if(email === "" || password === ""){
+        messageDiv.innerHTML = '<div class="alert alert-danger">All fields are required!</div>';
+        return;
+    }
+
+    messageDiv.innerHTML = '<div class="alert alert-success">Login Successful!</div>';
+});
+</script>
+
+</body>
+</html>
