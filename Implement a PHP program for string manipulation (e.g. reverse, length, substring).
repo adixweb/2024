@@ -1,0 +1,37 @@
+<?php
+$str = "Hello PHP";
+$str1= "welcome php,html,css";
+$str2= "  PHP  ";
+echo "original String:".$str;
+echo"<br>";
+
+echo "String length:".strlen($str);
+    
+echo "<br>";
+echo "Reverse String:".strrev($str);  
+
+echo "<br>";
+
+echo "String to uppercase:".strtoupper($str);   
+
+echo "<br>";
+
+echo "String  to lowercase:".strtolower($str);
+
+echo"<br>";
+
+echo "String replacement:".str_replace("PHP","HTML","Hello PHP");
+
+echo"<br>";
+
+echo"String position :".strpos($str,"PHP");
+
+echo "<br>";
+echo"sub String:".substr($str1,0,11);
+
+echo"<br>";
+
+echo "Remove space of string(string before & after space):".trim($str2); 
+
+echo "<br>";
+?>
