@@ -1,0 +1,117 @@
+<DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset = "UTF-8">
+<title> svpm page </title>
+</head>
+<body>
+<h1> 
+</h1>
+<strong>  SVPM College of Engineering Malegaon(BK) </strong>
+ Click to Visit : 
+<a href="https://engg.svpm.org.in/"> svpm.web </a>
+<br>
+College logo :<br>
+<img src=""C:\Users\cw\Pictures\svpm_logo.png""width="8%"><br>
+College Photo :<br> 
+<img src =""C:\Users\cw\Pictures\Screenshots\SVPM.png"" width = "40%">
+<strong>College Operational Schedule :</strong><br>
+<br>
+<table bgcolor="black" width="1150">
+<tr bgcolor="white">
+<th width="150">Mon</th>
+<th width="150">Tue</th>
+<th width="150">Wed</th>
+<th width="150">Thu</th>
+<th width="150">Fri</th>
+<th width="150">Sat</th>
+<th width="150">Sun</th>
+</tr>
+<tr bgcolor="white" align="center">
+<td>working day</td>
+<td>working day</td>
+<td>working day</td>
+<td>working day</td>
+<td>working day</td>
+<td>Sat(1st & 3rd) = Holiday  <br>    Sat(2st & 4rd) = working day 
+</td>
+<td>Holiday</td>
+</tr>
+</table>
+<br>
+<table width = "1200" border="1">
+<tr height ="200" align="center">
+<th width="100">Branch HOD's</th>
+<td>
+<table border="1" width="00" height="200">
+<tr>
+<th  align="center"width="200">
+Computer engg.
+</th>
+<th  align="center"width="200">
+Electrical engg.
+</th>
+<th  align="center"width="200">
+Civil engg.
+</th>
+<th  align="center"width="200">
+ENTC engg.
+</th>
+<th  align="center"width="200">
+IT engg.
+</th>
+</tr>
+<tr>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td  align="center">Mhaske Madam </td>
+<td  align="center">Mhaske Madam </td>
+<td  align="center">Mhaske Madam </td>
+<td  align="center">Mhaske Madam </td>
+<td  align="center">Mhaske Madam </td>
+<th width="200">Number of student in branch</th>
+<td><table border="1" width="1000"height="200">
+<tr>
+<th  align="center" width="200">
+Computer engg.
+</th>
+<th  align="center"width="200">
+Electrical engg.
+</th>
+<th  align="center"width="200">
+Civil engg.
+</th>
+<th  align="center"width="200">
+ENTC engg.
+</th>
+<th  align="center"width="200">
+IT engg.
+</th>
+</tr>
+<tr>
+<td align="center">
+120
+</td>
+<td align="center">
+120
+</td>
+<td align="center">
+120
+</td>
+<td align="center">
+120
+</td>
+<td align="center">
+120
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</br>
+</body>
+</html>
