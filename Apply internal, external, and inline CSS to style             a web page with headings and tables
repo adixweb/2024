@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Types Example</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="Practical4.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: rgb(88, 216, 239);
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 30px auto;
+            width: 60%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff5f6d;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6f7fb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Information</h1>
+    <h2>CSS Styling Example</h2>
+
+    <p style="color:rgb(236, 155, 208); text-align:center;">
+        This text is styled using internal, external, and inline CSS.
+    </p>
+
+    <table>
+        <caption>Student Table</caption>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Satyjeet patki</td>
+            <td> IOT </td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sunil solunke</td>
+            <td>90</td>
+             <td> IOT </td>
+        </tr>
+         <tr>
+            <td>3</td>
+            <td>Rushi Shingate</td>
+            <td>89</td>
+             <td> IOT </td>
+        </tr>
+
+         
+    </table>
+
+</body>
+</html>
