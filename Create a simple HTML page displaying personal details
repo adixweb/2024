@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Info</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+<h1>Personal Information</h1>
+
+<p><b>Name :</b> <u>Dipraj Vijay Jagtap</u></p>
+
+<p><strong>Mobile Number :</strong> <u>4596471532</u></p>
+
+<p><strong>Address :</strong> <u>Malegaon BK</u></p>
+
+<p><b>Current Profession :</b> <u>Unemployed</u></p>
+
+<p><b>Ongoing or Completed Course :</b> 
+<u>12th Pass & Currently Pursuing B.E. in Computer Engineering</u></p>
+
+</body>
+</html>
